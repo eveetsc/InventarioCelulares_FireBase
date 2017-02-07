@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inventario</title>
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+</head>
+<body>
+<!--Este es el div container que encierra la pagina entera -->
+<div class="container">
+    <header style="margin-top: 25%">
+        <h1>Inventario de Celulares :3</h1>
+        <h4>Elige tu modelo</h4>
+    </header>
+    <!--Este es la fila que encierra la primera forma-->
+
+    <form>
+        <div class="row">
+            <div class="six columns">
+                <label for="marca">Marca</label>
+                <select name="marca" class="u-full-width" id="marca">
+                    <option selected>Seleccione una Marca</option>
+                    <option value="lg">LG</option>
+                    <option value="ip">IPhone</option>
+                    <option value="sg">Samsung</option>
+                    <option value="mt">Motorola</option>
+                    <option value="nk">Nokia</option>
+                </select>
+            </div>
+            <div class="six columns">
+                <label for="modelo">Modelo</label>
+                <select class="u-full-width" id="modelo" onchange="getPrecio(this)">
+                    <option>No seleccionado</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <label for="precio">Precio Unitario</label>
+            <input id="precio" type="number" class="u-full-width">
+        </div>
+        <div class="row">
+            <label for="cantidad">Cantidad</label>
+            <input type="number" class="u-full-width" id="cantidad" >
+        </div>
+        <div class="row">
+            <input class="button-primary" type="submit" value="Enviar" onclick="Total()">
+        </div>
+    </form>
+
+
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script src="js/config.js"></script>
+</body>
+</html>
